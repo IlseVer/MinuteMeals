@@ -1,0 +1,17 @@
+﻿@model Recipe
+@{
+	ViewData["Title"] = @Model.Name;
+	Layout = "_Layout";
+}
+
+	<div class="card-body">
+		<h5 class="card-title">@Model.Name</h5>
+		<h6 class="card-subtitle mb-2 text-muted">@Model.CookingTimeInMinutes minutes</h6>
+		<p class="card-text fst-italic">@Model.Ingredients</p>
+		<p class="card-text mb-1 fw-lighter">Method:</p>
+		<p class="card-text">@Html.Raw(Model.Steps.Replace("\n", "<br />")) </p>
+
+	<a asp-controller="Home" asp-action="Index" class="btn btn-light btn-sm border">Back to Homepage</a>
+
+	</div>
+

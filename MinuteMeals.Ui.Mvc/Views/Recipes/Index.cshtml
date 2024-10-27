@@ -1,0 +1,24 @@
+﻿@model IList<Recipe>
+
+@{
+	ViewData["Title"] = "Recipes";
+}
+<h1>Recipes</h1>
+<div class="tabel">
+	<table class="table table-light table-striped ">
+		<thead>
+		<tr>
+			<th>Recipe</th>
+			<th>Cooking time (minutes)</th>
+		</tr>
+		</thead>
+		<tbody>
+		@foreach (var recipe in Model)
+		{
+				<partial name="RecipesRowPartial" model="recipe"/>
+		}
+		</tbody>
+	</table>
+</div>
+
+
